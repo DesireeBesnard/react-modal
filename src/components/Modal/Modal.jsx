@@ -1,6 +1,6 @@
 import React from "react";
 import Overlay from "../Overlay/index.jsx"
-import PropTypes from 'prop-types'
+import {PropTypes} from 'prop-types'
 
 const wrapperStyle = {
     width: '100%',
