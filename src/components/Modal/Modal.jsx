@@ -6,17 +6,21 @@ const wrapperStyle = {
     width: '100%',
     position: 'absolute',
     left: 0,
-    top: 0
+    top: 0,
+    height: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center"
 }
    
 const modalStyle = {
     maxWidth: '500px',
     width: '100%',
     border: '1px solid #ddd',
-    margin: '100px auto 0',
     zIndex: 1,
     position: 'relative',
-    padding: '10px'
+    padding: '100px'
 }
    
 const closeBtnStyle = {
@@ -42,7 +46,7 @@ export const Modal = ({ children, show, handleCloseBtn }) => {
                 <div className="wrapper" style={wrapperStyle}>
                     <Overlay onClick={handleCloseBtn} />
                     <div className="modal" style={modalStyle}>
-                        <button onClick={handleCloseBtn} style={closeBtnStyle}>
+                        <button className="modal-button" onClick={handleCloseBtn} style={closeBtnStyle}>
                         X
                         </button>
                         {children}
