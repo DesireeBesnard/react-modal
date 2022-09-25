@@ -9,10 +9,11 @@ const overlayStyle = {
     backgroundColor: 'rgba(255, 255, 255, 0.8)'
 }
 
+//Modal background. Receive an onClic props (function) that will close it
 const Overlay = ({onClick}) => {
 
   return (
-    <div onClick={onClick} style={overlayStyle}></div>
+    <div className="overlay" onClick={onClick} style={overlayStyle}></div>
   )
 }
 

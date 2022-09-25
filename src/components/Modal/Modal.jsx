@@ -1,5 +1,6 @@
 import React from "react";
 import Overlay from "../Overlay/index.jsx"
+import PropTypes from 'prop-types'
 
 const wrapperStyle = {
     width: '100%',
@@ -29,13 +30,18 @@ const closeBtnStyle = {
     cursor: 'pointer'
 }
 
+/* Receive three props:
+*  children => modal content
+*  show => boolean that handle state of modal (open/close)
+*  handleCloseBtn => Parent component function to close the modal
+*/
 export const Modal = ({ children, show, handleCloseBtn }) => {
     return (
         <>
             {show && (
-                <div style={wrapperStyle}>
+                <div className="wrapper" style={wrapperStyle}>
                     <Overlay onClick={handleCloseBtn} />
-                    <div style={modalStyle}>
+                    <div className="modal" style={modalStyle}>
                         <button onClick={handleCloseBtn} style={closeBtnStyle}>
                         X
                         </button>
@@ -45,4 +51,10 @@ export const Modal = ({ children, show, handleCloseBtn }) => {
             )}
         </>
     )
+}
+
+Modal.propTypes = {
+    children: PropTypes.element,
+    show: PropTypes.bool,
+    handleCloseBtn: PropTypes.func
 }
